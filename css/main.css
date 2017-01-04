@@ -19,8 +19,19 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+div.post a {
+    text-decoration: none;
+    color: blue;
+}
+
+div.post a:hover {
+    text-decoration: underline;
+}
+
 h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
