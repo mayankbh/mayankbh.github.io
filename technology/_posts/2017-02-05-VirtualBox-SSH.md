@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SSHing into a VirtualBox VM, because why not"
+title: "SSHing into a VirtualBox VM, because why not?"
 category: technology
 date: 2017-02-05
 ---
