@@ -61,3 +61,9 @@ There's a neat tool to generate synthetic power law graphs at https://www-comple
 ## Care with emulab directories
 
 If you try to install in your home directory on Emulab, it tries to build/install the PowerGraph files to your home directory in the ZFS share, which 1) has fixed quotas, and 2) feels slower to me. Instead, you can use the mkextrafs command that EmuLab provides to use the 4th disk partition (which gives you around 100GB to play with, which is not persistent across nodes, but works fine for experimentation purposes)
+
+## Update : Freezing with more complex topologies
+
+Using OpenMPI seemed to have some weird issues with PowerGraph on Emulab, the system would just seem to freeze up. On looking further into it, the system appeared to hang at the MPI All Gather primitive (I have no idea why). This issue would even happen with simple MPI programs that tried to use Barriers or AllGather, so that was quite a pain.
+
+The fix I found for now is to use mpich instead of OpenMPI. You can specific the exact version of MPI to use by suffixing the mpiexec command, for example, mpiexec.mpich uses MPICH.
